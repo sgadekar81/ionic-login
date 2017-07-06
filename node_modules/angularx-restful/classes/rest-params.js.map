@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../classes/rest-params.ts"],"names":[],"mappings":"AAAA;IAII;IAAc,CAAC;IACnB,iBAAC;AAAD,CALA,AAKC,IAAA","file":"rest-params.js","sourceRoot":"","sourcesContent":["export class RestParams{\r\n    uri:string;\r\n    payload:any;\r\n    headers:any;\r\n    constructor(){}\r\n}"]}

@@ -1,0 +1,25 @@
+{
+  "name": "login",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "transpile": "ngc",
+    "package": "rollup -c",
+    "minify": "uglifyjs dist/bundles/ionic-login.umd.js --screw-ie8 --compress --mangle --comments --output dist/bundles/ionic-login.umd.min.js",
+    "build": "npm run transpile && npm run package && npm run minify"
+  },
+  "author": "sandman81",
+  "license": "ISC",
+  "devDependencies": {
+    "@angular/compiler": "^4.2.5",
+    "@angular/compiler-cli": "^4.2.5",
+    "angularx-restful": "0.0.3-alpha",
+    "rollup": "^0.43.0",
+    "typescript": "^2.4.1",
+    "uglify-js": "^3.0.21"
+  },
+  "dependencies": {
+    "@ionic-native/native-storage": "^3.13.1"
+  }
+}

@@ -1,0 +1,1 @@
+{"version":3,"sources":["../appSettings.ts"],"names":[],"mappings":"AAAA;IAAA;IAEA,CAAC;IADiB,qBAAS,GAAG,wCAAwC,CAAC;IACvE,kBAAC;CAFD,AAEC,IAAA;SAFY,WAAW","file":"appSettings.js","sourceRoot":"","sourcesContent":["export class AppSettings{\r\n    public static API_ENDPT = 'https://justbe-my-life-dev.appspot.com';\r\n}"]}

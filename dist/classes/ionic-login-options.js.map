@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../classes/ionic-login-options.ts"],"names":[],"mappings":"AAEA;IAII;IAAc,CAAC;IACnB,cAAC;AAAD,CALA,AAKC,IAAA","file":"ionic-login-options.js","sourceRoot":"","sourcesContent":["\r\n\r\nexport class Options{\r\n    success:Function;\r\n    error:Function;\r\n    uri:string;\r\n    constructor(){}\r\n}"]}
