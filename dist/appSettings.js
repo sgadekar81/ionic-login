@@ -1,7 +1,7 @@
 var AppSettings = (function () {
     function AppSettings() {
     }
-    AppSettings.API_ENDPT = 'https://justbe-my-life-dev.appspot.com';
+    AppSettings.API_ENDPT = 'https://life-skills-dev.appspot.com';
     return AppSettings;
 }());
 export { AppSettings };

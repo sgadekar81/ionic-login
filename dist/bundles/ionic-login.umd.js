@@ -1,13 +1,13 @@
 (function (global, factory) {
-	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@angular/common'), require('@ionic-native/facebook'), require('@ionic-native/google-plus'), require('angularx-restful/srv/rest.service'), require('angularx-restful/classes/rest-params'), require('@ionic-native/native-storage'), require('angularx-restful')) :
-	typeof define === 'function' && define.amd ? define(['exports', '@angular/core', '@angular/common', '@ionic-native/facebook', '@ionic-native/google-plus', 'angularx-restful/srv/rest.service', 'angularx-restful/classes/rest-params', '@ionic-native/native-storage', 'angularx-restful'], factory) :
-	(factory((global.ng = global.ng || {}, global.ng['ionic-login'] = global.ng['ionic-login'] || {}),global.ng.core,global._angular_common,global._ionicNative_facebook,global._ionicNative_googlePlus,global.angularxRestful_srv_rest_service,global.angularxRestful_classes_restParams,global._ionicNative_nativeStorage,global.angularxRestful));
-}(this, (function (exports,_angular_core,_angular_common,_ionicNative_facebook,_ionicNative_googlePlus,angularxRestful_srv_rest_service,angularxRestful_classes_restParams,_ionicNative_nativeStorage,angularxRestful) { 'use strict';
+	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@angular/common'), require('@ionic-native/facebook'), require('@ionic-native/google-plus'), require('angularx-restful/srv/rest.service'), require('angularx-restful/classes/rest-params'), require('ionic-modal-helper/ionic-modal-helper.service'), require('ionic-angular'), require('@ionic-native/native-storage'), require('angularx-restful')) :
+	typeof define === 'function' && define.amd ? define(['exports', '@angular/core', '@angular/common', '@ionic-native/facebook', '@ionic-native/google-plus', 'angularx-restful/srv/rest.service', 'angularx-restful/classes/rest-params', 'ionic-modal-helper/ionic-modal-helper.service', 'ionic-angular', '@ionic-native/native-storage', 'angularx-restful'], factory) :
+	(factory((global.ng = global.ng || {}, global.ng['ionic-login'] = global.ng['ionic-login'] || {}),global.ng.core,global._angular_common,global._ionicNative_facebook,global._ionicNative_googlePlus,global.angularxRestful_srv_rest_service,global.angularxRestful_classes_restParams,global.ionicModalHelper_ionicModalHelper_service,global.ionicAngular,global._ionicNative_nativeStorage,global.angularxRestful));
+}(this, (function (exports,_angular_core,_angular_common,_ionicNative_facebook,_ionicNative_googlePlus,angularxRestful_srv_rest_service,angularxRestful_classes_restParams,ionicModalHelper_ionicModalHelper_service,ionicAngular,_ionicNative_nativeStorage,angularxRestful) { 'use strict';
 
 var AppSettings = (function () {
     function AppSettings() {
     }
-    AppSettings.API_ENDPT = 'https://justbe-my-life-dev.appspot.com';
+    AppSettings.API_ENDPT = 'https://life-skills-dev.appspot.com';
     return AppSettings;
 }());
 
@@ -192,14 +192,53 @@ var JustbeProfile = (function () {
     return JustbeProfile;
 }());
 
+var EmailGetterComponent = (function () {
+    function EmailGetterComponent(_navParams, _ionicModalHelperSrv) {
+        this._navParams = _navParams;
+        this._ionicModalHelperSrv = _ionicModalHelperSrv;
+        console.log(_navParams.data.afterSelectEmail);
+    }
+    EmailGetterComponent.prototype.onSubmitClick = function (email) {
+        if (this.basicValidateEmail(email)) {
+            if (this._navParams.data && this._navParams.data.afterSelectEmail) {
+                this._navParams.data.afterSelectEmail(email);
+                this._ionicModalHelperSrv.closeModal();
+            }
+            else {
+                console.error('pass callback function to component, what to do after clicking on submit');
+            }
+        }
+        else {
+            this.validationMsg = 'Invalid Email';
+        }
+    };
+    EmailGetterComponent.prototype.basicValidateEmail = function (email) {
+        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(email);
+    };
+    EmailGetterComponent.decorators = [
+        { type: _angular_core.Component, args: [{
+                    selector: 'email-getter',
+                    templateUrl: 'email-getter.html'
+                },] },
+    ];
+    /** @nocollapse */
+    EmailGetterComponent.ctorParameters = function () { return [
+        { type: ionicAngular.NavParams, },
+        { type: ionicModalHelper_ionicModalHelper_service.IonicModalHelperSrv, },
+    ]; };
+    return EmailGetterComponent;
+}());
+
 // ysp your server part
 // this part includes 
 // request your server for access token
 // by using this token u do calls on your server like getProfile/profileId and that token in request header that implies requesting user is autherized
 // /api/justbe/generateJusteBeToken
 var Ysp = (function () {
-    function Ysp(_rst) {
+    function Ysp(_rst, _ionicModalHelperSrv) {
         this._rst = _rst;
+        this._ionicModalHelperSrv = _ionicModalHelperSrv;
     }
     Ysp.prototype.execute = function (_circular, success, error) {
         var _this = this;
@@ -213,11 +252,15 @@ var Ysp = (function () {
         // do here image related stuff
         // this._imageMan.execute(success,error);
         this.lCircular.justbeProfile = new JustbeProfile(_circular, this.lCircular);
-        console.log(this.lCircular.justbeProfile);
-        this.getJustbeAccessToken(this.lCircular.params)
-            .subscribe(function (justbeAccessToken) {
-            _this.lCircular.success(justbeAccessToken);
-        });
+        if (this.validation(this.lCircular.justbeProfile)) {
+            this.getJustbeAccessToken(this.lCircular.params)
+                .subscribe(function (justbeAccessToken) {
+                _this.lCircular.success(justbeAccessToken);
+            });
+        }
+        else {
+            this._ionicModalHelperSrv.raiseModal(EmailGetterComponent, { afterSelectEmail: this.afterEmailSelect.bind(this) });
+        }
     };
     Ysp.prototype.setLcircular = function (_circular, success, error) {
         this.lCircular = new Array();
@@ -236,12 +279,24 @@ var Ysp = (function () {
             _this.lCircular._circular.error(err);
         });
     };
+    Ysp.prototype.validation = function (justbeProfile) {
+        return justbeProfile.profileVO.emails.length > 0 ? true : false;
+    };
+    Ysp.prototype.afterEmailSelect = function (email) {
+        var _this = this;
+        this.lCircular.params.payload.justbeProfile.profileVO.emails.push(email);
+        this.getJustbeAccessToken(this.lCircular.params)
+            .subscribe(function (justbeAccessToken) {
+            _this.lCircular.success(justbeAccessToken);
+        });
+    };
     Ysp.decorators = [
         { type: _angular_core.Injectable },
     ];
     /** @nocollapse */
     Ysp.ctorParameters = function () { return [
         { type: angularxRestful_srv_rest_service.RestService, },
+        { type: ionicModalHelper_ionicModalHelper_service.IonicModalHelperSrv, },
     ]; };
     return Ysp;
 }());
@@ -296,12 +351,33 @@ var LoginService = (function () {
     return LoginService;
 }());
 
+var EmailGetterComponentModule = (function () {
+    function EmailGetterComponentModule() {
+    }
+    EmailGetterComponentModule.decorators = [
+        { type: _angular_core.NgModule, args: [{
+                    declarations: [
+                        EmailGetterComponent,
+                    ],
+                    imports: [
+                        ionicAngular.IonicModule,
+                    ],
+                    exports: [
+                        EmailGetterComponent
+                    ]
+                },] },
+    ];
+    /** @nocollapse */
+    EmailGetterComponentModule.ctorParameters = function () { return []; };
+    return EmailGetterComponentModule;
+}());
+
 var IonicLogin = (function () {
     function IonicLogin() {
     }
     IonicLogin.decorators = [
         { type: _angular_core.NgModule, args: [{
-                    imports: [_angular_common.CommonModule, angularxRestful.AngularxRestful],
+                    imports: [_angular_common.CommonModule, angularxRestful.AngularxRestful, EmailGetterComponentModule],
                     providers: [LoginService, _ionicNative_facebook.Facebook, _ionicNative_googlePlus.GooglePlus, angularxRestful_srv_rest_service.RestService, Ssp, Ysp, ProfileStabilizer, _ionicNative_nativeStorage.NativeStorage]
                 },] },
     ];

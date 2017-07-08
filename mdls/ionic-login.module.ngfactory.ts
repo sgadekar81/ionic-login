@@ -6,32 +6,145 @@
  /* tslint:disable */
 
 
-import * as i0 from '@angular/core';
-import * as i1 from './ionic-login.module';
-import * as i2 from '@angular/common';
-import * as i3 from 'angularx-restful/srv/rest.service';
-import * as i4 from '@angular/http';
-import * as i5 from '@ionic-native/facebook/index';
-import * as i6 from '@ionic-native/google-plus/index';
-import * as i7 from '../srvs/profile-stabilizer.service';
-import * as i8 from '../srvs/ssp.service';
-import * as i9 from '../srvs/ysp.service';
-import * as i10 from '@ionic-native/native-storage/index';
-import * as i11 from '../srvs/ionic-login.service';
-import * as i12 from 'angularx-restful/mdl/angularx-restful.module';
-export const IonicLoginNgFactory:i0.NgModuleFactory<i1.IonicLogin> = i0.ɵcmf(i1.IonicLogin,
-    ([] as any[]),(_l:any) => {
-      return i0.ɵmod([i0.ɵmpd(512,i0.ComponentFactoryResolver,i0.ɵCodegenComponentFactoryResolver,
-          [[8,([] as any[])],[3,i0.ComponentFactoryResolver],i0.NgModuleRef]),i0.ɵmpd(4608,
-          i2.NgLocalization,i2.NgLocaleLocalization,[i0.LOCALE_ID]),i0.ɵmpd(4608,i3.RestService,
-          i3.RestService,[i4.Http]),i0.ɵmpd(4608,i5.Facebook,i5.Facebook,([] as any[])),
-          i0.ɵmpd(4608,i6.GooglePlus,i6.GooglePlus,([] as any[])),i0.ɵmpd(4608,i7.ProfileStabilizer,
-              i7.ProfileStabilizer,([] as any[])),i0.ɵmpd(4608,i8.Ssp,i8.Ssp,[i3.RestService,
-              i5.Facebook,i6.GooglePlus,i7.ProfileStabilizer]),i0.ɵmpd(4608,i9.Ysp,
-              i9.Ysp,[i3.RestService]),i0.ɵmpd(4608,i10.NativeStorage,i10.NativeStorage,
-              ([] as any[])),i0.ɵmpd(4608,i11.LoginService,i11.LoginService,[i8.Ssp,
-              i9.Ysp,i10.NativeStorage]),i0.ɵmpd(512,i2.CommonModule,i2.CommonModule,
-              ([] as any[])),i0.ɵmpd(512,i12.AngularxRestful,i12.AngularxRestful,([] as any[])),
-          i0.ɵmpd(512,i1.IonicLogin,i1.IonicLogin,([] as any[]))]);
-    });
-//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiQzovVXNlcnMvU2FuZC1NYW4vRGVza3RvcC9jdXRlUHVwcHlQaWNzL215TWRsL21kbHMvaW9uaWMtbG9naW4ubW9kdWxlLm5nZmFjdG9yeS50cyIsInZlcnNpb24iOjMsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIm5nOi8vL0M6L1VzZXJzL1NhbmQtTWFuL0Rlc2t0b3AvY3V0ZVB1cHB5UGljcy9teU1kbC9tZGxzL2lvbmljLWxvZ2luLm1vZHVsZS50cyJdLCJzb3VyY2VzQ29udGVudCI6WyIgIl0sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7In0=
+import * as import0 from '@angular/core';
+import * as import1 from './ionic-login.module';
+import * as import2 from '@angular/common';
+import * as import3 from 'angularx-restful/mdl/angularx-restful.module';
+import * as import4 from '@angular/forms';
+import * as import5 from 'ionic-angular/module';
+import * as import6 from '../components/email-getter/email-getter.module';
+import * as import7 from 'angularx-restful/srv/rest.service';
+import * as import8 from '@ionic-native/facebook/index';
+import * as import9 from '@ionic-native/google-plus/index';
+import * as import10 from '../srvs/profile-stabilizer.service';
+import * as import11 from '../srvs/ssp.service';
+import * as import12 from '../srvs/ysp.service';
+import * as import13 from '@ionic-native/native-storage/index';
+import * as import14 from '../srvs/ionic-login.service';
+import * as import15 from '../node_modules/ionic-angular/components/action-sheet/action-sheet-component.ngfactory';
+import * as import16 from '../node_modules/ionic-angular/components/alert/alert-component.ngfactory';
+import * as import17 from '../node_modules/ionic-angular/components/app/app-root.ngfactory';
+import * as import18 from '../node_modules/ionic-angular/components/loading/loading-component.ngfactory';
+import * as import19 from '../node_modules/ionic-angular/components/modal/modal-component.ngfactory';
+import * as import20 from '../node_modules/ionic-angular/components/picker/picker-component.ngfactory';
+import * as import21 from '../node_modules/ionic-angular/components/popover/popover-component.ngfactory';
+import * as import22 from '../node_modules/ionic-angular/components/select/select-popover-component.ngfactory';
+import * as import23 from '../node_modules/ionic-angular/components/toast/toast-component.ngfactory';
+import * as import24 from '@angular/http';
+import * as import25 from 'ionic-modal-helper/ionic-modal-helper.service';
+class IonicLoginInjector extends import0.ɵNgModuleInjector<import1.IonicLogin> {
+  _CommonModule_0:import2.CommonModule;
+  _AngularxRestful_1:import3.AngularxRestful;
+  _ɵba_2:import4.ɵba;
+  _FormsModule_3:import4.FormsModule;
+  _ReactiveFormsModule_4:import4.ReactiveFormsModule;
+  _IonicModule_5:import5.IonicModule;
+  _EmailGetterComponentModule_6:import6.EmailGetterComponentModule;
+  _IonicLogin_7:import1.IonicLogin;
+  __NgLocalization_8:import2.NgLocaleLocalization;
+  __RestService_9:import7.RestService;
+  __ɵi_10:import4.ɵi;
+  __FormBuilder_11:import4.FormBuilder;
+  __Facebook_12:import8.Facebook;
+  __GooglePlus_13:import9.GooglePlus;
+  __ProfileStabilizer_14:import10.ProfileStabilizer;
+  __Ssp_15:import11.Ssp;
+  __Ysp_16:import12.Ysp;
+  __NativeStorage_17:import13.NativeStorage;
+  __LoginService_18:import14.LoginService;
+  constructor(parent:import0.Injector) {
+    super(parent,[
+      import15.ActionSheetCmpNgFactory,
+      import16.AlertCmpNgFactory,
+      import17.IonicAppNgFactory,
+      import18.LoadingCmpNgFactory,
+      import19.ModalCmpNgFactory,
+      import20.PickerCmpNgFactory,
+      import21.PopoverCmpNgFactory,
+      import22.SelectPopoverNgFactory,
+      import23.ToastCmpNgFactory
+    ]
+    ,([] as any[]));
+  }
+  get _NgLocalization_8():import2.NgLocaleLocalization {
+    if ((this.__NgLocalization_8 == null)) { (this.__NgLocalization_8 = new import2.NgLocaleLocalization(this.parent.get(import0.LOCALE_ID))); }
+    return this.__NgLocalization_8;
+  }
+  get _RestService_9():import7.RestService {
+    if ((this.__RestService_9 == null)) { (this.__RestService_9 = new import7.RestService(this.parent.get(import24.Http))); }
+    return this.__RestService_9;
+  }
+  get _ɵi_10():import4.ɵi {
+    if ((this.__ɵi_10 == null)) { (this.__ɵi_10 = new import4.ɵi()); }
+    return this.__ɵi_10;
+  }
+  get _FormBuilder_11():import4.FormBuilder {
+    if ((this.__FormBuilder_11 == null)) { (this.__FormBuilder_11 = new import4.FormBuilder()); }
+    return this.__FormBuilder_11;
+  }
+  get _Facebook_12():import8.Facebook {
+    if ((this.__Facebook_12 == null)) { (this.__Facebook_12 = new import8.Facebook()); }
+    return this.__Facebook_12;
+  }
+  get _GooglePlus_13():import9.GooglePlus {
+    if ((this.__GooglePlus_13 == null)) { (this.__GooglePlus_13 = new import9.GooglePlus()); }
+    return this.__GooglePlus_13;
+  }
+  get _ProfileStabilizer_14():import10.ProfileStabilizer {
+    if ((this.__ProfileStabilizer_14 == null)) { (this.__ProfileStabilizer_14 = new import10.ProfileStabilizer()); }
+    return this.__ProfileStabilizer_14;
+  }
+  get _Ssp_15():import11.Ssp {
+    if ((this.__Ssp_15 == null)) { (this.__Ssp_15 = new import11.Ssp(this._RestService_9,this._Facebook_12,this._GooglePlus_13,this._ProfileStabilizer_14)); }
+    return this.__Ssp_15;
+  }
+  get _Ysp_16():import12.Ysp {
+    if ((this.__Ysp_16 == null)) { (this.__Ysp_16 = new import12.Ysp(this._RestService_9,this.parent.get(import25.IonicModalHelperSrv))); }
+    return this.__Ysp_16;
+  }
+  get _NativeStorage_17():import13.NativeStorage {
+    if ((this.__NativeStorage_17 == null)) { (this.__NativeStorage_17 = new import13.NativeStorage()); }
+    return this.__NativeStorage_17;
+  }
+  get _LoginService_18():import14.LoginService {
+    if ((this.__LoginService_18 == null)) { (this.__LoginService_18 = new import14.LoginService(this._Ssp_15,this._Ysp_16,this._NativeStorage_17)); }
+    return this.__LoginService_18;
+  }
+  createInternal():import1.IonicLogin {
+    this._CommonModule_0 = new import2.CommonModule();
+    this._AngularxRestful_1 = new import3.AngularxRestful();
+    this._ɵba_2 = new import4.ɵba();
+    this._FormsModule_3 = new import4.FormsModule();
+    this._ReactiveFormsModule_4 = new import4.ReactiveFormsModule();
+    this._IonicModule_5 = new import5.IonicModule();
+    this._EmailGetterComponentModule_6 = new import6.EmailGetterComponentModule();
+    this._IonicLogin_7 = new import1.IonicLogin();
+    return this._IonicLogin_7;
+  }
+  getInternal(token:any,notFoundResult:any):any {
+    if ((token === import2.CommonModule)) { return this._CommonModule_0; }
+    if ((token === import3.AngularxRestful)) { return this._AngularxRestful_1; }
+    if ((token === import4.ɵba)) { return this._ɵba_2; }
+    if ((token === import4.FormsModule)) { return this._FormsModule_3; }
+    if ((token === import4.ReactiveFormsModule)) { return this._ReactiveFormsModule_4; }
+    if ((token === import5.IonicModule)) { return this._IonicModule_5; }
+    if ((token === import6.EmailGetterComponentModule)) { return this._EmailGetterComponentModule_6; }
+    if ((token === import1.IonicLogin)) { return this._IonicLogin_7; }
+    if ((token === import2.NgLocalization)) { return this._NgLocalization_8; }
+    if ((token === import7.RestService)) { return this._RestService_9; }
+    if ((token === import4.ɵi)) { return this._ɵi_10; }
+    if ((token === import4.FormBuilder)) { return this._FormBuilder_11; }
+    if ((token === import8.Facebook)) { return this._Facebook_12; }
+    if ((token === import9.GooglePlus)) { return this._GooglePlus_13; }
+    if ((token === import10.ProfileStabilizer)) { return this._ProfileStabilizer_14; }
+    if ((token === import11.Ssp)) { return this._Ssp_15; }
+    if ((token === import12.Ysp)) { return this._Ysp_16; }
+    if ((token === import13.NativeStorage)) { return this._NativeStorage_17; }
+    if ((token === import14.LoginService)) { return this._LoginService_18; }
+    return notFoundResult;
+  }
+  destroyInternal():void {
+  }
+}
+export const IonicLoginNgFactory:import0.NgModuleFactory<import1.IonicLogin> = new import0.NgModuleFactory<any>(IonicLoginInjector,import1.IonicLogin);
+//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiQzovVXNlcnMvU2FuZC1NYW4vRGVza3RvcC9XT1JLSU5HX0Rpci9ucG1Qcm9qZWN0cy9pb25pYy1sb2dpbi9tZGxzL2lvbmljLWxvZ2luLm1vZHVsZS5uZ2ZhY3RvcnkudHMiLCJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJuZzovLy9DOi9Vc2Vycy9TYW5kLU1hbi9EZXNrdG9wL1dPUktJTkdfRGlyL25wbVByb2plY3RzL2lvbmljLWxvZ2luL21kbHMvaW9uaWMtbG9naW4ubW9kdWxlLnRzIl0sInNvdXJjZXNDb250ZW50IjpbIiAiXSwibWFwcGluZ3MiOiJBQUFBOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OyJ9

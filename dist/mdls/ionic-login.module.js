@@ -9,12 +9,13 @@ import { Ssp } from '../srvs/ssp.service';
 import { Ysp } from '../srvs/ysp.service';
 import { ProfileStabilizer } from '../srvs/profile-stabilizer.service';
 import { NativeStorage } from '@ionic-native/native-storage';
+import { EmailGetterComponentModule } from '../components/email-getter/email-getter.module';
 var IonicLogin = (function () {
     function IonicLogin() {
     }
     IonicLogin.decorators = [
         { type: NgModule, args: [{
-                    imports: [CommonModule, AngularxRestful],
+                    imports: [CommonModule, AngularxRestful, EmailGetterComponentModule],
                     providers: [LoginService, Facebook, GooglePlus, RestService, Ssp, Ysp, ProfileStabilizer, NativeStorage]
                 },] },
     ];

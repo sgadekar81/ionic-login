@@ -8,9 +8,12 @@ import { Uris } from '../classes/uris';
 import { JustbeProfile } from '../classes/justbe/justbe-profile';
 import { RestService } from 'angularx-restful/srv/rest.service';
 import { RestParams } from 'angularx-restful/classes/rest-params';
+import { IonicModalHelperSrv } from 'ionic-modal-helper/ionic-modal-helper.service';
+import { EmailGetterComponent } from '../components/email-getter/email-getter';
 var Ysp = (function () {
-    function Ysp(_rst) {
+    function Ysp(_rst, _ionicModalHelperSrv) {
         this._rst = _rst;
+        this._ionicModalHelperSrv = _ionicModalHelperSrv;
     }
     Ysp.prototype.execute = function (_circular, success, error) {
         var _this = this;
@@ -24,11 +27,15 @@ var Ysp = (function () {
         // do here image related stuff
         // this._imageMan.execute(success,error);
         this.lCircular.justbeProfile = new JustbeProfile(_circular, this.lCircular);
-        console.log(this.lCircular.justbeProfile);
-        this.getJustbeAccessToken(this.lCircular.params)
-            .subscribe(function (justbeAccessToken) {
-            _this.lCircular.success(justbeAccessToken);
-        });
+        if (this.validation(this.lCircular.justbeProfile)) {
+            this.getJustbeAccessToken(this.lCircular.params)
+                .subscribe(function (justbeAccessToken) {
+                _this.lCircular.success(justbeAccessToken);
+            });
+        }
+        else {
+            this._ionicModalHelperSrv.raiseModal(EmailGetterComponent, { afterSelectEmail: this.afterEmailSelect.bind(this) });
+        }
     };
     Ysp.prototype.setLcircular = function (_circular, success, error) {
         this.lCircular = new Array();
@@ -47,12 +54,24 @@ var Ysp = (function () {
             _this.lCircular._circular.error(err);
         });
     };
+    Ysp.prototype.validation = function (justbeProfile) {
+        return justbeProfile.profileVO.emails.length > 0 ? true : false;
+    };
+    Ysp.prototype.afterEmailSelect = function (email) {
+        var _this = this;
+        this.lCircular.params.payload.justbeProfile.profileVO.emails.push(email);
+        this.getJustbeAccessToken(this.lCircular.params)
+            .subscribe(function (justbeAccessToken) {
+            _this.lCircular.success(justbeAccessToken);
+        });
+    };
     Ysp.decorators = [
         { type: Injectable },
     ];
     /** @nocollapse */
     Ysp.ctorParameters = function () { return [
         { type: RestService, },
+        { type: IonicModalHelperSrv, },
     ]; };
     return Ysp;
 }());
