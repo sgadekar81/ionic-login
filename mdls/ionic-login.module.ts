@@ -9,7 +9,10 @@ import { Ssp } from '../srvs/ssp.service';
 import { Ysp } from '../srvs/ysp.service';
 import { ProfileStabilizer } from '../srvs/profile-stabilizer.service';
 import { NativeStorage } from '@ionic-native/native-storage';
+import { EmailGetterComponent } from '../components/email-getter/email-getter';
 @NgModule({
+  declarations: [EmailGetterComponent],
+  entryComponents: [EmailGetterComponent],
   imports: [CommonModule,AngularxRestful],
   providers: [LoginService,Facebook,GooglePlus,RestService,Ssp,Ysp,ProfileStabilizer,NativeStorage]
 })

@@ -56,14 +56,14 @@ export class Ssp {
     fbLogin(){
         this._fb.login(['public_profile', 'email']).then((authResponse=>{
             this.get_fbProfile(authResponse)
-        }),(err)=>{
+        }),(err:any)=>{
             this.lCircular._circular.error(err);
         });
     }
     ggpLogin(){
         this._ggp.login({}).then((googleProfile=>{
             this.stabilizeProfile(googleProfile);
-        }),(err)=>{
+        }),(err:any)=>{
             this.lCircular._circular.error(err);
         });
     }

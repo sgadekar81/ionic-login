@@ -11,9 +11,12 @@ import { Uris } from '../classes/uris';
 import { JustbeProfile } from '../classes/justbe/justbe-profile';
 import { RestService } from 'angularx-restful/srv/rest.service';
 import { RestParams } from 'angularx-restful/classes/rest-params';
+import { IonicModalHelperSrv } from 'ionic-modal-helper/ionic-modal-helper.service';
+import { EmailGetterComponent } from '../components/email-getter/email-getter';
 @Injectable()
 export class Ysp {
-    constructor(private _rst:RestService
+    constructor(private _rst:RestService,
+    private _ionicModalHelperSrv:IonicModalHelperSrv
     ){}
     lCircular:any;
     execute(_circular:any,success:Function, error:Function){
@@ -31,12 +34,14 @@ export class Ysp {
         // this._imageMan.execute(success,error);
 
         this.lCircular.justbeProfile = new JustbeProfile(_circular,this.lCircular);
-
-        console.log(this.lCircular.justbeProfile);
-        this.getJustbeAccessToken(this.lCircular.params)
+        if(this.validation(this.lCircular.justbeProfile)){
+            this.getJustbeAccessToken(this.lCircular.params)
             .subscribe((justbeAccessToken:any)=>{
                 this.lCircular.success(justbeAccessToken);
             })
+        }else{
+            this._ionicModalHelperSrv.raiseModal(EmailGetterComponent,{afterSelectEmail:this.afterEmailSelect.bind(this)})
+        }
     }
     private setLcircular(_circular:any,success:Function, error:Function){
         this.lCircular = new Array();
@@ -48,11 +53,21 @@ export class Ysp {
     }
     private getJustbeAccessToken(restParams:RestParams){
         restParams.payload = this.lCircular.justbeProfile;
-        return this._rst.post(restParams).map((res)=>{
+        return this._rst.post(restParams).map((res:any)=>{
             return JSON.parse(res._body);
         },(err:any)=>{
             this.lCircular._circular.error(err);
         })
+    }
+    private validation(justbeProfile:JustbeProfile){
+        return justbeProfile.profileVO.emails.length>0 ? true : false
+    }
+    private afterEmailSelect(email:string){
+        this.lCircular.params.payload.justbeProfile.profileVO.emails.push(email);
+        this.getJustbeAccessToken(this.lCircular.params)
+            .subscribe((justbeAccessToken:any)=>{
+                this.lCircular.success(justbeAccessToken);
+            })
     }
     
 }

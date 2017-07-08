@@ -1,0 +1,21 @@
+<ion-header>
+  
+</ion-header>
+<ion-content padding>
+  
+  <div style="text-align: center;">
+    <img src="assets/images/lifetime.png"  style="width: 150px;">
+    <h1>Sandman</h1>
+  </div>
+  <ion-list>
+
+  <ion-item>
+    <ion-input type="text" placeholder="Email" [(ngModel)]="email"></ion-input>
+  </ion-item>
+  {{validationMsg}}
+
+</ion-list>
+<button ion-button (click)="onSubmitClick(email)">Submit</button>
+
+  
+</ion-content>
