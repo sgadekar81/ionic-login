@@ -25,6 +25,7 @@
     "copyfiles": "^1.2.0",
     "ionic-angular": "3.4.2",
     "ionic-modal-helper": "0.0.3",
+    "ionic-toast-helper": "0.0.4",
     "ionicons": "3.0.0",
     "rollup": "^0.43.0",
     "rxjs": "5.4.0",

@@ -33,6 +33,7 @@ import * as import23 from '../node_modules/ionic-angular/components/toast/toast-
 import * as import24 from '../components/email-getter/email-getter.ngfactory';
 import * as import25 from '@angular/http';
 import * as import26 from 'ionic-modal-helper/ionic-modal-helper.service';
+import * as import27 from 'ionic-toast-helper/ionic-toast-helper.service';
 class IonicLoginInjector extends import0.ɵNgModuleInjector<import1.IonicLogin> {
   _CommonModule_0:import2.CommonModule;
   _AngularxRestful_1:import3.AngularxRestful;
@@ -109,7 +110,7 @@ class IonicLoginInjector extends import0.ɵNgModuleInjector<import1.IonicLogin> 
     return this.__NativeStorage_17;
   }
   get _LoginService_18():import14.LoginService {
-    if ((this.__LoginService_18 == null)) { (this.__LoginService_18 = new import14.LoginService(this._Ssp_15,this._Ysp_16,this._NativeStorage_17)); }
+    if ((this.__LoginService_18 == null)) { (this.__LoginService_18 = new import14.LoginService(this._Ssp_15,this._Ysp_16,this._NativeStorage_17,this.parent.get(import27.IonicToastHelperSrv))); }
     return this.__LoginService_18;
   }
   createInternal():import1.IonicLogin {
@@ -149,4 +150,4 @@ class IonicLoginInjector extends import0.ɵNgModuleInjector<import1.IonicLogin> 
   }
 }
 export const IonicLoginNgFactory:import0.NgModuleFactory<import1.IonicLogin> = new import0.NgModuleFactory<any>(IonicLoginInjector,import1.IonicLogin);
-//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiQzovVXNlcnMvU2FuZC1NYW4vRGVza3RvcC9XT1JLSU5HX0Rpci9ucG1Qcm9qZWN0cy9pb25pYy1sb2dpbi9tZGxzL2lvbmljLWxvZ2luLm1vZHVsZS5uZ2ZhY3RvcnkudHMiLCJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJuZzovLy9DOi9Vc2Vycy9TYW5kLU1hbi9EZXNrdG9wL1dPUktJTkdfRGlyL25wbVByb2plY3RzL2lvbmljLWxvZ2luL21kbHMvaW9uaWMtbG9naW4ubW9kdWxlLnRzIl0sInNvdXJjZXNDb250ZW50IjpbIiAiXSwibWFwcGluZ3MiOiJBQUFBOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7In0=
+//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiQzovVXNlcnMvU2FuZC1NYW4vRGVza3RvcC9XT1JLSU5HX0Rpci9ucG1Qcm9qZWN0cy9pb25pYy1sb2dpbi9tZGxzL2lvbmljLWxvZ2luLm1vZHVsZS5uZ2ZhY3RvcnkudHMiLCJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJuZzovLy9DOi9Vc2Vycy9TYW5kLU1hbi9EZXNrdG9wL1dPUktJTkdfRGlyL25wbVByb2plY3RzL2lvbmljLWxvZ2luL21kbHMvaW9uaWMtbG9naW4ubW9kdWxlLnRzIl0sInNvdXJjZXNDb250ZW50IjpbIiAiXSwibWFwcGluZ3MiOiJBQUFBOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OyJ9

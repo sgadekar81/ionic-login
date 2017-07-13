@@ -1,8 +1,8 @@
 (function (global, factory) {
-	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@angular/common'), require('@ionic-native/facebook'), require('@ionic-native/google-plus'), require('angularx-restful/srv/rest.service'), require('angularx-restful/classes/rest-params'), require('ionic-modal-helper/ionic-modal-helper.service'), require('ionic-angular'), require('@ionic-native/native-storage'), require('angularx-restful')) :
-	typeof define === 'function' && define.amd ? define(['exports', '@angular/core', '@angular/common', '@ionic-native/facebook', '@ionic-native/google-plus', 'angularx-restful/srv/rest.service', 'angularx-restful/classes/rest-params', 'ionic-modal-helper/ionic-modal-helper.service', 'ionic-angular', '@ionic-native/native-storage', 'angularx-restful'], factory) :
-	(factory((global.ng = global.ng || {}, global.ng['ionic-login'] = global.ng['ionic-login'] || {}),global.ng.core,global._angular_common,global._ionicNative_facebook,global._ionicNative_googlePlus,global.angularxRestful_srv_rest_service,global.angularxRestful_classes_restParams,global.ionicModalHelper_ionicModalHelper_service,global.ionicAngular,global._ionicNative_nativeStorage,global.angularxRestful));
-}(this, (function (exports,_angular_core,_angular_common,_ionicNative_facebook,_ionicNative_googlePlus,angularxRestful_srv_rest_service,angularxRestful_classes_restParams,ionicModalHelper_ionicModalHelper_service,ionicAngular,_ionicNative_nativeStorage,angularxRestful) { 'use strict';
+	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@angular/common'), require('@ionic-native/facebook'), require('@ionic-native/google-plus'), require('angularx-restful/srv/rest.service'), require('angularx-restful/classes/rest-params'), require('ionic-modal-helper/ionic-modal-helper.service'), require('ionic-angular'), require('@ionic-native/native-storage'), require('ionic-toast-helper/ionic-toast-helper.service'), require('ionic-toast-helper/toast'), require('angularx-restful')) :
+	typeof define === 'function' && define.amd ? define(['exports', '@angular/core', '@angular/common', '@ionic-native/facebook', '@ionic-native/google-plus', 'angularx-restful/srv/rest.service', 'angularx-restful/classes/rest-params', 'ionic-modal-helper/ionic-modal-helper.service', 'ionic-angular', '@ionic-native/native-storage', 'ionic-toast-helper/ionic-toast-helper.service', 'ionic-toast-helper/toast', 'angularx-restful'], factory) :
+	(factory((global.ng = global.ng || {}, global.ng['ionic-login'] = global.ng['ionic-login'] || {}),global.ng.core,global._angular_common,global._ionicNative_facebook,global._ionicNative_googlePlus,global.angularxRestful_srv_rest_service,global.angularxRestful_classes_restParams,global.ionicModalHelper_ionicModalHelper_service,global.ionicAngular,global._ionicNative_nativeStorage,global.ionicToastHelper_ionicToastHelper_service,global.ionicToastHelper_toast,global.angularxRestful));
+}(this, (function (exports,_angular_core,_angular_common,_ionicNative_facebook,_ionicNative_googlePlus,angularxRestful_srv_rest_service,angularxRestful_classes_restParams,ionicModalHelper_ionicModalHelper_service,ionicAngular,_ionicNative_nativeStorage,ionicToastHelper_ionicToastHelper_service,ionicToastHelper_toast,angularxRestful) { 'use strict';
 
 var AppSettings = (function () {
     function AppSettings() {
@@ -221,7 +221,7 @@ var EmailGetterComponent = (function () {
     EmailGetterComponent.decorators = [
         { type: _angular_core.Component, args: [{
                     selector: 'email-getter',
-                    template: "\n                <ion-header>\n  \n                </ion-header>\n                <ion-content padding>\n  \n                  <div style=\"text-align: center;\">\n                    <img [src]=\"profile.profileVO._images[0].imageUrl\"  style=\"width: 150px;\">\n                    <h1>{{profile.profileVO.firstName}} {{profile.profileVO.lastName}}</h1>\n                  </div>\n                  <ion-list>\n                    <ion-item>\n                      <ion-input type=\"text\" placeholder=\"Email\" [(ngModel)]=\"email\"></ion-input>\n                    </ion-item>\n                    <span style=\"color:red\">{{validationMsg}}</span>\n\n                  </ion-list>\n              <button ion-button (click)=\"onSubmitClick(email)\">Submit</button>\n              </ion-content>\n  "
+                    template: "\n                <ion-header>\n  \n                </ion-header>\n                <ion-content padding>\n  \n                  <div style=\"text-align: center;\">\n                    <img [src]=\"profile.profileVO._images[0].imageUrl\"  style=\"width: 150px;\">\n                    <h1>{{profile.profileVO.firstName}} {{profile.profileVO.lastName}}</h1>\n                  </div>\n                  <ion-list>\n                    <ion-item>\n                      <ion-input type=\"text\" placeholder=\"enter your email\" [(ngModel)]=\"email\"></ion-input>\n                    </ion-item>\n                    <span style=\"color:red\">{{validationMsg}}</span>\n\n                  </ion-list>\n              <button ion-button (click)=\"onSubmitClick(email)\">Submit</button>\n              </ion-content>\n  "
                 },] },
     ];
     /** @nocollapse */
@@ -307,10 +307,11 @@ var Ysp = (function () {
 // need to work more on here like send data to this module like redirect uri
 // and enable ysp for just be only
 var LoginService = (function () {
-    function LoginService(_ssp, _ysp, _nativeStorage) {
+    function LoginService(_ssp, _ysp, _nativeStorage, _ionicToastHelperSrv) {
         this._ssp = _ssp;
         this._ysp = _ysp;
         this._nativeStorage = _nativeStorage;
+        this._ionicToastHelperSrv = _ionicToastHelperSrv;
         this.onInit();
     }
     LoginService.prototype.onInit = function () { };
@@ -320,8 +321,6 @@ var LoginService = (function () {
     };
     LoginService.prototype.onSspSuccess = function (profile) {
         this.circular.profile = profile;
-        console.log('new code comming in');
-        console.log(profile);
         this._ysp.execute(this.circular, this.onYspSuccess.bind(this), this.onYspError.bind(this));
     };
     LoginService.prototype.onSspError = function (err) {
@@ -329,9 +328,10 @@ var LoginService = (function () {
     };
     LoginService.prototype.onYspSuccess = function (access_token) {
         this.circular.success(access_token);
+        this.raiseToast();
         this._nativeStorage
             .setItem('access_token', access_token)
-            .then(function () { return console.log('Stored item!'); }, function (error) { return console.error('Error storing item', error); });
+            .then(function () { console.info('token stored'); }, function (error) { return console.error('Error storing item', error); });
     };
     LoginService.prototype.onYspError = function (err) {
         this.circular.error(err);
@@ -342,6 +342,12 @@ var LoginService = (function () {
         this.circular.success = success;
         this.circular.error = error;
     };
+    LoginService.prototype.raiseToast = function () {
+        var toast = new ionicToastHelper_toast.Toast();
+        toast.message = 'Login Successful';
+        toast.position = 'bottom';
+        this._ionicToastHelperSrv.raiseToast(toast, function () { });
+    };
     LoginService.decorators = [
         { type: _angular_core.Injectable },
     ];
@@ -350,6 +356,7 @@ var LoginService = (function () {
         { type: Ssp, },
         { type: Ysp, },
         { type: _ionicNative_nativeStorage.NativeStorage, },
+        { type: ionicToastHelper_ionicToastHelper_service.IonicToastHelperSrv, },
     ]; };
     return LoginService;
 }());

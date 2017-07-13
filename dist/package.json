@@ -1,6 +1,6 @@
 {
   "name": "ionic-login",
-  "version": "0.0.17-alpha",
+  "version": "0.0.19-alpha",
   "description": "ionic login module for Angular.",
   "main": "bundles/amazing.umd.js",
   "module": "index.js",
@@ -25,6 +25,8 @@
     "@ionic-native/google-plus": "^3.12.1",
     "@ionic-native/facebook": "^3.12.1",
     "angularx-restful": "0.0.3-alpha",
-    "@ionic-native/native-storage": "^3.13.1"
+    "@ionic-native/native-storage": "^3.13.1",
+    "ionic-toast-helper": "0.0.4",
+    "ionic-modal-helper": "0.0.3"
   }
 }
