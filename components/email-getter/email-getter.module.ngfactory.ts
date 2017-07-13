@@ -20,6 +20,7 @@ import * as import10 from '../../node_modules/ionic-angular/components/picker/pi
 import * as import11 from '../../node_modules/ionic-angular/components/popover/popover-component.ngfactory';
 import * as import12 from '../../node_modules/ionic-angular/components/select/select-popover-component.ngfactory';
 import * as import13 from '../../node_modules/ionic-angular/components/toast/toast-component.ngfactory';
+import * as import14 from './email-getter.ngfactory';
 class EmailGetterComponentModuleInjector extends import0.ɵNgModuleInjector<import1.EmailGetterComponentModule> {
   _CommonModule_0:import2.CommonModule;
   _ɵba_1:import3.ɵba;
@@ -40,7 +41,8 @@ class EmailGetterComponentModuleInjector extends import0.ɵNgModuleInjector<impo
       import10.PickerCmpNgFactory,
       import11.PopoverCmpNgFactory,
       import12.SelectPopoverNgFactory,
-      import13.ToastCmpNgFactory
+      import13.ToastCmpNgFactory,
+      import14.EmailGetterComponentNgFactory
     ]
     ,([] as any[]));
   }
@@ -81,4 +83,4 @@ class EmailGetterComponentModuleInjector extends import0.ɵNgModuleInjector<impo
   }
 }
 export const EmailGetterComponentModuleNgFactory:import0.NgModuleFactory<import1.EmailGetterComponentModule> = new import0.NgModuleFactory<any>(EmailGetterComponentModuleInjector,import1.EmailGetterComponentModule);
-//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiQzovVXNlcnMvU2FuZC1NYW4vRGVza3RvcC9XT1JLSU5HX0Rpci9ucG1Qcm9qZWN0cy9pb25pYy1sb2dpbi9jb21wb25lbnRzL2VtYWlsLWdldHRlci9lbWFpbC1nZXR0ZXIubW9kdWxlLm5nZmFjdG9yeS50cyIsInZlcnNpb24iOjMsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIm5nOi8vL0M6L1VzZXJzL1NhbmQtTWFuL0Rlc2t0b3AvV09SS0lOR19EaXIvbnBtUHJvamVjdHMvaW9uaWMtbG9naW4vY29tcG9uZW50cy9lbWFpbC1nZXR0ZXIvZW1haWwtZ2V0dGVyLm1vZHVsZS50cyJdLCJzb3VyY2VzQ29udGVudCI6WyIgIl0sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OzsifQ==
+//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiQzovVXNlcnMvU2FuZC1NYW4vRGVza3RvcC9XT1JLSU5HX0Rpci9ucG1Qcm9qZWN0cy9pb25pYy1sb2dpbi9jb21wb25lbnRzL2VtYWlsLWdldHRlci9lbWFpbC1nZXR0ZXIubW9kdWxlLm5nZmFjdG9yeS50cyIsInZlcnNpb24iOjMsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIm5nOi8vL0M6L1VzZXJzL1NhbmQtTWFuL0Rlc2t0b3AvV09SS0lOR19EaXIvbnBtUHJvamVjdHMvaW9uaWMtbG9naW4vY29tcG9uZW50cy9lbWFpbC1nZXR0ZXIvZW1haWwtZ2V0dGVyLm1vZHVsZS50cyJdLCJzb3VyY2VzQ29udGVudCI6WyIgIl0sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OyJ9

@@ -4,6 +4,7 @@ export declare class EmailGetterComponent {
     _navParams: NavParams;
     private _ionicModalHelperSrv;
     validationMsg: string;
+    profile: any;
     constructor(_navParams: NavParams, _ionicModalHelperSrv: IonicModalHelperSrv);
     onSubmitClick(email: string): void;
     basicValidateEmail(email: string): boolean;

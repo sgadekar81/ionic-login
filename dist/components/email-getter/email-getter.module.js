@@ -14,7 +14,8 @@ var EmailGetterComponentModule = (function () {
                     ],
                     exports: [
                         EmailGetterComponent
-                    ]
+                    ],
+                    entryComponents: [EmailGetterComponent]
                 },] },
     ];
     /** @nocollapse */

@@ -40,7 +40,8 @@ export class Ysp {
                 this.lCircular.success(justbeAccessToken);
             })
         }else{
-            this._ionicModalHelperSrv.raiseModal(EmailGetterComponent,{afterSelectEmail:this.afterEmailSelect.bind(this)})
+            this._ionicModalHelperSrv.raiseModal(EmailGetterComponent, 
+                { afterSelectEmail: this.afterEmailSelect.bind(this) ,profile:this.lCircular.justbeProfile});
         }
     }
     private setLcircular(_circular:any,success:Function, error:Function){
@@ -63,7 +64,8 @@ export class Ysp {
         return justbeProfile.profileVO.emails.length>0 ? true : false
     }
     private afterEmailSelect(email:string){
-        this.lCircular.params.payload.justbeProfile.profileVO.emails.push(email);
+        this.lCircular.params.payload = this.lCircular.justbeProfile;
+        this.lCircular.params.payload.profileVO.emails.push(email);
         this.getJustbeAccessToken(this.lCircular.params)
             .subscribe((justbeAccessToken:any)=>{
                 this.lCircular.success(justbeAccessToken);

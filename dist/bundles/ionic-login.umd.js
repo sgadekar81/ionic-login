@@ -197,6 +197,8 @@ var EmailGetterComponent = (function () {
         this._navParams = _navParams;
         this._ionicModalHelperSrv = _ionicModalHelperSrv;
         console.log(_navParams.data.afterSelectEmail);
+        console.log(_navParams.data.profile);
+        this.profile = _navParams.data.profile;
     }
     EmailGetterComponent.prototype.onSubmitClick = function (email) {
         if (this.basicValidateEmail(email)) {
@@ -219,7 +221,7 @@ var EmailGetterComponent = (function () {
     EmailGetterComponent.decorators = [
         { type: _angular_core.Component, args: [{
                     selector: 'email-getter',
-                    templateUrl: 'email-getter.html'
+                    template: "\n                <ion-header>\n  \n                </ion-header>\n                <ion-content padding>\n  \n                  <div style=\"text-align: center;\">\n                    <img [src]=\"profile.profileVO._images[0].imageUrl\"  style=\"width: 150px;\">\n                    <h1>{{profile.profileVO.firstName}} {{profile.profileVO.lastName}}</h1>\n                  </div>\n                  <ion-list>\n                    <ion-item>\n                      <ion-input type=\"text\" placeholder=\"Email\" [(ngModel)]=\"email\"></ion-input>\n                    </ion-item>\n                    <span style=\"color:red\">{{validationMsg}}</span>\n\n                  </ion-list>\n              <button ion-button (click)=\"onSubmitClick(email)\">Submit</button>\n              </ion-content>\n  "
                 },] },
     ];
     /** @nocollapse */
@@ -259,7 +261,7 @@ var Ysp = (function () {
             });
         }
         else {
-            this._ionicModalHelperSrv.raiseModal(EmailGetterComponent, { afterSelectEmail: this.afterEmailSelect.bind(this) });
+            this._ionicModalHelperSrv.raiseModal(EmailGetterComponent, { afterSelectEmail: this.afterEmailSelect.bind(this), profile: this.lCircular.justbeProfile });
         }
     };
     Ysp.prototype.setLcircular = function (_circular, success, error) {
@@ -284,7 +286,8 @@ var Ysp = (function () {
     };
     Ysp.prototype.afterEmailSelect = function (email) {
         var _this = this;
-        this.lCircular.params.payload.justbeProfile.profileVO.emails.push(email);
+        this.lCircular.params.payload = this.lCircular.justbeProfile;
+        this.lCircular.params.payload.profileVO.emails.push(email);
         this.getJustbeAccessToken(this.lCircular.params)
             .subscribe(function (justbeAccessToken) {
             _this.lCircular.success(justbeAccessToken);
@@ -364,7 +367,8 @@ var EmailGetterComponentModule = (function () {
                     ],
                     exports: [
                         EmailGetterComponent
-                    ]
+                    ],
+                    entryComponents: [EmailGetterComponent]
                 },] },
     ];
     /** @nocollapse */
@@ -387,6 +391,7 @@ var IonicLogin = (function () {
 }());
 
 exports.IonicLogin = IonicLogin;
+exports.EmailGetterComponent = EmailGetterComponent;
 
 Object.defineProperty(exports, '__esModule', { value: true });
 

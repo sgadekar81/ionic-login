@@ -1,4 +1,5 @@
 import { NgModule }     from '@angular/core';
+import { IonicModule } from 'ionic-angular';
 import { CommonModule } from '@angular/common';
 import { LoginService } from '../srvs/ionic-login.service';
 import { Facebook } from '@ionic-native/facebook';

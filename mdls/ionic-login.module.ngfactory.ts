@@ -30,8 +30,9 @@ import * as import20 from '../node_modules/ionic-angular/components/picker/picke
 import * as import21 from '../node_modules/ionic-angular/components/popover/popover-component.ngfactory';
 import * as import22 from '../node_modules/ionic-angular/components/select/select-popover-component.ngfactory';
 import * as import23 from '../node_modules/ionic-angular/components/toast/toast-component.ngfactory';
-import * as import24 from '@angular/http';
-import * as import25 from 'ionic-modal-helper/ionic-modal-helper.service';
+import * as import24 from '../components/email-getter/email-getter.ngfactory';
+import * as import25 from '@angular/http';
+import * as import26 from 'ionic-modal-helper/ionic-modal-helper.service';
 class IonicLoginInjector extends import0.ɵNgModuleInjector<import1.IonicLogin> {
   _CommonModule_0:import2.CommonModule;
   _AngularxRestful_1:import3.AngularxRestful;
@@ -62,7 +63,8 @@ class IonicLoginInjector extends import0.ɵNgModuleInjector<import1.IonicLogin> 
       import20.PickerCmpNgFactory,
       import21.PopoverCmpNgFactory,
       import22.SelectPopoverNgFactory,
-      import23.ToastCmpNgFactory
+      import23.ToastCmpNgFactory,
+      import24.EmailGetterComponentNgFactory
     ]
     ,([] as any[]));
   }
@@ -71,7 +73,7 @@ class IonicLoginInjector extends import0.ɵNgModuleInjector<import1.IonicLogin> 
     return this.__NgLocalization_8;
   }
   get _RestService_9():import7.RestService {
-    if ((this.__RestService_9 == null)) { (this.__RestService_9 = new import7.RestService(this.parent.get(import24.Http))); }
+    if ((this.__RestService_9 == null)) { (this.__RestService_9 = new import7.RestService(this.parent.get(import25.Http))); }
     return this.__RestService_9;
   }
   get _ɵi_10():import4.ɵi {
@@ -99,7 +101,7 @@ class IonicLoginInjector extends import0.ɵNgModuleInjector<import1.IonicLogin> 
     return this.__Ssp_15;
   }
   get _Ysp_16():import12.Ysp {
-    if ((this.__Ysp_16 == null)) { (this.__Ysp_16 = new import12.Ysp(this._RestService_9,this.parent.get(import25.IonicModalHelperSrv))); }
+    if ((this.__Ysp_16 == null)) { (this.__Ysp_16 = new import12.Ysp(this._RestService_9,this.parent.get(import26.IonicModalHelperSrv))); }
     return this.__Ysp_16;
   }
   get _NativeStorage_17():import13.NativeStorage {
@@ -147,4 +149,4 @@ class IonicLoginInjector extends import0.ɵNgModuleInjector<import1.IonicLogin> 
   }
 }
 export const IonicLoginNgFactory:import0.NgModuleFactory<import1.IonicLogin> = new import0.NgModuleFactory<any>(IonicLoginInjector,import1.IonicLogin);
-//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiQzovVXNlcnMvU2FuZC1NYW4vRGVza3RvcC9XT1JLSU5HX0Rpci9ucG1Qcm9qZWN0cy9pb25pYy1sb2dpbi9tZGxzL2lvbmljLWxvZ2luLm1vZHVsZS5uZ2ZhY3RvcnkudHMiLCJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJuZzovLy9DOi9Vc2Vycy9TYW5kLU1hbi9EZXNrdG9wL1dPUktJTkdfRGlyL25wbVByb2plY3RzL2lvbmljLWxvZ2luL21kbHMvaW9uaWMtbG9naW4ubW9kdWxlLnRzIl0sInNvdXJjZXNDb250ZW50IjpbIiAiXSwibWFwcGluZ3MiOiJBQUFBOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OyJ9
+//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiQzovVXNlcnMvU2FuZC1NYW4vRGVza3RvcC9XT1JLSU5HX0Rpci9ucG1Qcm9qZWN0cy9pb25pYy1sb2dpbi9tZGxzL2lvbmljLWxvZ2luLm1vZHVsZS5uZ2ZhY3RvcnkudHMiLCJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJuZzovLy9DOi9Vc2Vycy9TYW5kLU1hbi9EZXNrdG9wL1dPUktJTkdfRGlyL25wbVByb2plY3RzL2lvbmljLWxvZ2luL21kbHMvaW9uaWMtbG9naW4ubW9kdWxlLnRzIl0sInNvdXJjZXNDb250ZW50IjpbIiAiXSwibWFwcGluZ3MiOiJBQUFBOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7In0=

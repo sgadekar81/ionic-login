@@ -11,6 +11,7 @@ import { EmailGetterComponent } from './email-getter';
   ],
   exports: [
     EmailGetterComponent
-  ]
+  ],
+  entryComponents:[EmailGetterComponent]
 })
 export class EmailGetterComponentModule {}

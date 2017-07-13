@@ -34,7 +34,7 @@ var Ysp = (function () {
             });
         }
         else {
-            this._ionicModalHelperSrv.raiseModal(EmailGetterComponent, { afterSelectEmail: this.afterEmailSelect.bind(this) });
+            this._ionicModalHelperSrv.raiseModal(EmailGetterComponent, { afterSelectEmail: this.afterEmailSelect.bind(this), profile: this.lCircular.justbeProfile });
         }
     };
     Ysp.prototype.setLcircular = function (_circular, success, error) {
@@ -59,7 +59,8 @@ var Ysp = (function () {
     };
     Ysp.prototype.afterEmailSelect = function (email) {
         var _this = this;
-        this.lCircular.params.payload.justbeProfile.profileVO.emails.push(email);
+        this.lCircular.params.payload = this.lCircular.justbeProfile;
+        this.lCircular.params.payload.profileVO.emails.push(email);
         this.getJustbeAccessToken(this.lCircular.params)
             .subscribe(function (justbeAccessToken) {
             _this.lCircular.success(justbeAccessToken);
