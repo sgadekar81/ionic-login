@@ -4,12 +4,9 @@ import { IonicModalHelperSrv } from 'ionic-modal-helper/ionic-modal-helper.servi
 @Component({
   selector: 'email-getter',
   template: `
-
-
   <ion-header>
     <ion-title>Enter Email</ion-title>
   </ion-header>
-
 <ion-content class="app-bg-color">
   <ion-grid>
     <ion-row text-center>
@@ -20,7 +17,6 @@ import { IonicModalHelperSrv } from 'ionic-modal-helper/ionic-modal-helper.servi
     </ion-row>
   </ion-grid>
   <ion-card padding>
-    
       <ion-list margin-bottom>
         <ion-item>
           <ion-input type="text" placeholder="enter your email" [(ngModel)]="email"></ion-input>
@@ -30,7 +26,6 @@ import { IonicModalHelperSrv } from 'ionic-modal-helper/ionic-modal-helper.servi
       <button  block ion-button  small item-end icon-left  color="primary" (click)="onSubmitClick(email)">
         Submit
       </button>  
-    
   </ion-card>     
 </ion-content>
   `

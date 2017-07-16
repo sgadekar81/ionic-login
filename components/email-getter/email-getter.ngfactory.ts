@@ -10,28 +10,36 @@ import * as import0 from '@angular/core';
 import * as import1 from 'ionic-angular/components/toolbar/toolbar-header';
 import * as import2 from 'ionic-angular/config/config';
 import * as import3 from 'ionic-angular/navigation/view-controller';
-import * as import4 from '../../node_modules/ionic-angular/components/content/content.ngfactory';
-import * as import5 from 'ionic-angular/components/content/content';
-import * as import6 from 'ionic-angular/platform/platform';
-import * as import7 from 'ionic-angular/platform/dom-controller';
-import * as import8 from 'ionic-angular/components/app/app';
-import * as import9 from 'ionic-angular/platform/keyboard';
-import * as import10 from 'ionic-angular/navigation/nav-controller';
-import * as import11 from 'ionic-angular/components/list/list';
-import * as import12 from 'ionic-angular/gestures/gesture-controller';
-import * as import13 from '../../node_modules/ionic-angular/components/item/item.ngfactory';
-import * as import14 from 'ionic-angular/components/item/item';
-import * as import15 from 'ionic-angular/util/form';
-import * as import16 from 'ionic-angular/components/item/item-reorder';
-import * as import17 from 'ionic-angular/components/item/item-content';
-import * as import18 from './email-getter';
-import * as import19 from '../../node_modules/ionic-angular/components/input/input.ngfactory';
-import * as import20 from '@angular/forms';
-import * as import21 from 'ionic-angular/components/input/input';
-import * as import22 from '../../node_modules/ionic-angular/components/button/button.ngfactory';
-import * as import23 from 'ionic-angular/components/button/button';
-import * as import24 from 'ionic-angular/navigation/nav-params';
-import * as import25 from 'ionic-modal-helper/ionic-modal-helper.service';
+import * as import4 from '../../node_modules/ionic-angular/components/toolbar/toolbar-title.ngfactory';
+import * as import5 from 'ionic-angular/components/toolbar/toolbar-title';
+import * as import6 from 'ionic-angular/components/toolbar/toolbar';
+import * as import7 from 'ionic-angular/components/toolbar/navbar';
+import * as import8 from '../../node_modules/ionic-angular/components/content/content.ngfactory';
+import * as import9 from 'ionic-angular/components/content/content';
+import * as import10 from 'ionic-angular/platform/platform';
+import * as import11 from 'ionic-angular/platform/dom-controller';
+import * as import12 from 'ionic-angular/components/app/app';
+import * as import13 from 'ionic-angular/platform/keyboard';
+import * as import14 from 'ionic-angular/navigation/nav-controller';
+import * as import15 from 'ionic-angular/components/grid/grid';
+import * as import16 from 'ionic-angular/components/grid/row';
+import * as import17 from 'ionic-angular/components/grid/col';
+import * as import18 from 'ionic-angular/components/card/card';
+import * as import19 from 'ionic-angular/components/list/list';
+import * as import20 from 'ionic-angular/gestures/gesture-controller';
+import * as import21 from '../../node_modules/ionic-angular/components/item/item.ngfactory';
+import * as import22 from 'ionic-angular/components/item/item';
+import * as import23 from 'ionic-angular/util/form';
+import * as import24 from 'ionic-angular/components/item/item-reorder';
+import * as import25 from 'ionic-angular/components/item/item-content';
+import * as import26 from './email-getter';
+import * as import27 from '../../node_modules/ionic-angular/components/input/input.ngfactory';
+import * as import28 from '@angular/forms';
+import * as import29 from 'ionic-angular/components/input/input';
+import * as import30 from '../../node_modules/ionic-angular/components/button/button.ngfactory';
+import * as import31 from 'ionic-angular/components/button/button';
+import * as import32 from 'ionic-angular/navigation/nav-params';
+import * as import33 from 'ionic-modal-helper/ionic-modal-helper.service';
 const styles_EmailGetterComponent:any[] = ([] as any[]);
 export const RenderType_EmailGetterComponent:import0.RendererType2 = import0.ɵcrt({
   encapsulation: 2,
@@ -41,8 +49,8 @@ export const RenderType_EmailGetterComponent:import0.RendererType2 = import0.ɵc
 );
 export function View_EmailGetterComponent_0(l:any):import0.ɵViewDefinition {
   return import0.ɵvid(0,[
-    (l()(),import0.ɵted((null as any),['\n                '])),
-    (l()(),import0.ɵeld(0,(null as any),(null as any),2,'ion-header',([] as any[]),(null as any),(null as any),(null as any),(null as any),(null as any))),
+    (l()(),import0.ɵted((null as any),['\n  '])),
+    (l()(),import0.ɵeld(0,(null as any),(null as any),6,'ion-header',([] as any[]),(null as any),(null as any),(null as any),(null as any),(null as any))),
     import0.ɵdid(16384,(null as any),0,import1.Header,[
       import2.Config,
       import0.ElementRef,
@@ -54,11 +62,30 @@ export function View_EmailGetterComponent_0(l:any):import0.ɵViewDefinition {
 
     ]
     ,(null as any),(null as any)),
-    (l()(),import0.ɵted((null as any),['\n  \n                '])),
-    (l()(),import0.ɵted((null as any),['\n                '])),
-      (l()(),import0.ɵeld(0,(null as any),(null as any),35,'ion-content',[[
-        'padding',
-        ''
+    (l()(),import0.ɵted((null as any),['\n    '])),
+    (l()(),import0.ɵeld(0,(null as any),(null as any),2,'ion-title',([] as any[]),(null as any),(null as any),(null as any),import4.View_ToolbarTitle_0,import4.RenderType_ToolbarTitle)),
+    import0.ɵdid(49152,(null as any),0,import5.ToolbarTitle,[
+      import2.Config,
+      import0.ElementRef,
+      import0.Renderer,
+      [
+        2,
+        import6.Toolbar
+      ]
+      ,
+      [
+        2,
+        import7.Navbar
+      ]
+
+    ]
+    ,(null as any),(null as any)),
+    (l()(),import0.ɵted(0,['Enter Email'])),
+    (l()(),import0.ɵted((null as any),['\n  '])),
+    (l()(),import0.ɵted((null as any),['\n'])),
+      (l()(),import0.ɵeld(0,(null as any),(null as any),48,'ion-content',[[
+        'class',
+        'app-bg-color'
       ]
     ],[
       [
@@ -74,15 +101,15 @@ export function View_EmailGetterComponent_0(l:any):import0.ɵViewDefinition {
       ]
 
     ]
-    ,(null as any),(null as any),import4.View_Content_0,import4.RenderType_Content)),
-    import0.ɵdid(4374528,(null as any),0,import5.Content,[
+    ,(null as any),(null as any),import8.View_Content_0,import8.RenderType_Content)),
+    import0.ɵdid(4374528,(null as any),0,import9.Content,[
       import2.Config,
-      import6.Platform,
-      import7.DomController,
+      import10.Platform,
+      import11.DomController,
       import0.ElementRef,
       import0.Renderer,
-      import8.App,
-      import9.Keyboard,
+      import12.App,
+      import13.Keyboard,
       import0.NgZone,
       [
         2,
@@ -91,29 +118,61 @@ export function View_EmailGetterComponent_0(l:any):import0.ɵViewDefinition {
       ,
       [
         2,
-        import10.NavController
+        import14.NavController
       ]
 
     ]
     ,(null as any),(null as any)),
-    (l()(),import0.ɵted(1,['\n  \n                  '])),
-      (l()(),import0.ɵeld(0,(null as any),1,6,'div',[[
-        'style',
-        'text-align: center;'
+    (l()(),import0.ɵted(1,['\n  '])),
+      (l()(),import0.ɵeld(0,(null as any),1,15,'ion-grid',[[
+        'class',
+        'grid'
       ]
     ],(null as any),(null as any),(null as any),(null as any),(null as any))),
-    (l()(),import0.ɵted((null as any),['\n                    '])),
-      (l()(),import0.ɵeld(0,(null as any),(null as any),0,'img',[[
-        'style',
-        'width: 150px;'
+    import0.ɵdid(16384,(null as any),0,import15.Grid,([] as any[]),(null as any),(null as any)),
+    (l()(),import0.ɵted((null as any),['\n    '])),
+    (l()(),import0.ɵeld(0,(null as any),(null as any),11,'ion-row',[
+      [
+        'class',
+        'row'
       ]
-      ],[[
+      ,
+      [
+        'text-center',
+        ''
+      ]
+
+    ]
+    ,(null as any),(null as any),(null as any),(null as any),(null as any))),
+    import0.ɵdid(16384,(null as any),0,import16.Row,([] as any[]),(null as any),(null as any)),
+    (l()(),import0.ɵted((null as any),['\n      '])),
+    (l()(),import0.ɵeld(0,(null as any),(null as any),7,'ion-col',[
+      [
+        'class',
+        'profilesetting-img col'
+      ]
+      ,
+      [
+        'col-12',
+        ''
+      ]
+      ,
+      [
+        'text-center',
+        ''
+      ]
+
+    ]
+    ,(null as any),(null as any),(null as any),(null as any),(null as any))),
+    import0.ɵdid(16384,(null as any),0,import17.Col,([] as any[]),(null as any),(null as any)),
+    (l()(),import0.ɵted((null as any),['\n        '])),
+      (l()(),import0.ɵeld(0,(null as any),(null as any),0,'img',([] as any[]),[[
         8,
         'src',
         4
       ]
     ],(null as any),(null as any),(null as any),(null as any))),
-    (l()(),import0.ɵted((null as any),['\n                    '])),
+    (l()(),import0.ɵted((null as any),['\n        '])),
     (l()(),import0.ɵeld(0,(null as any),(null as any),1,'h1',([] as any[]),(null as any),(null as any),(null as any),(null as any),(null as any))),
     (l()(),import0.ɵted((null as any),[
       '',
@@ -121,32 +180,50 @@ export function View_EmailGetterComponent_0(l:any):import0.ɵViewDefinition {
       ''
     ]
     )),
-    (l()(),import0.ɵted((null as any),['\n                  '])),
-    (l()(),import0.ɵted(1,['\n                  '])),
-    (l()(),import0.ɵeld(0,(null as any),1,19,'ion-list',([] as any[]),(null as any),(null as any),(null as any),(null as any),(null as any))),
-    import0.ɵdid(16384,(null as any),0,import11.List,[
+    (l()(),import0.ɵted((null as any),['\n      '])),
+    (l()(),import0.ɵted((null as any),['\n    '])),
+    (l()(),import0.ɵted((null as any),['\n  '])),
+    (l()(),import0.ɵted(1,['\n  '])),
+      (l()(),import0.ɵeld(0,(null as any),1,27,'ion-card',[[
+        'padding',
+        ''
+      ]
+    ],(null as any),(null as any),(null as any),(null as any),(null as any))),
+    import0.ɵdid(16384,(null as any),0,import18.Card,[
+      import2.Config,
+      import0.ElementRef,
+      import0.Renderer
+    ]
+    ,(null as any),(null as any)),
+    (l()(),import0.ɵted((null as any),['\n      '])),
+      (l()(),import0.ɵeld(0,(null as any),(null as any),19,'ion-list',[[
+        'margin-bottom',
+        ''
+      ]
+    ],(null as any),(null as any),(null as any),(null as any),(null as any))),
+    import0.ɵdid(16384,(null as any),0,import19.List,[
       import2.Config,
       import0.ElementRef,
       import0.Renderer,
-      import6.Platform,
-      import12.GestureController,
-      import7.DomController
+      import10.Platform,
+      import20.GestureController,
+      import11.DomController
     ]
     ,(null as any),(null as any)),
-    (l()(),import0.ɵted((null as any),['\n                    '])),
-      (l()(),import0.ɵeld(0,(null as any),(null as any),12,'ion-item',[[
+    (l()(),import0.ɵted((null as any),['\n        '])),
+      (l()(),import0.ɵeld(0,(null as any),(null as any),15,'ion-item',[[
         'class',
         'item item-block'
       ]
-    ],(null as any),(null as any),(null as any),import13.View_Item_0,import13.RenderType_Item)),
-    import0.ɵdid(1097728,(null as any),3,import14.Item,[
-      import15.Form,
+    ],(null as any),(null as any),(null as any),import21.View_Item_0,import21.RenderType_Item)),
+    import0.ɵdid(1097728,(null as any),3,import22.Item,[
+      import23.Form,
       import2.Config,
       import0.ElementRef,
       import0.Renderer,
       [
         2,
-        import16.ItemReorder
+        import24.ItemReorder
       ]
 
     ]
@@ -154,8 +231,8 @@ export function View_EmailGetterComponent_0(l:any):import0.ɵViewDefinition {
     import0.ɵqud(335544320,1,{contentLabel: 0}),
     import0.ɵqud(603979776,2,{_buttons: 1}),
     import0.ɵqud(603979776,3,{_icons: 1}),
-    import0.ɵdid(16384,(null as any),0,import17.ItemContent,([] as any[]),(null as any),(null as any)),
-    (l()(),import0.ɵted(2,['\n                      '])),
+    import0.ɵdid(16384,(null as any),0,import25.ItemContent,([] as any[]),(null as any),(null as any)),
+    (l()(),import0.ɵted(2,['\n          '])),
     (l()(),import0.ɵeld(0,(null as any),3,4,'ion-input',[
       [
         'placeholder',
@@ -218,14 +295,14 @@ export function View_EmailGetterComponent_0(l:any):import0.ɵViewDefinition {
       ]
     ],(v,en,$event) => {
       var ad:boolean = true;
-      var co:import18.EmailGetterComponent = v.component;
+      var co:import26.EmailGetterComponent = v.component;
       if (('ngModelChange' === en)) {
         const pd_0:any = ((<any>(co.email = $event)) !== false);
         ad = (pd_0 && ad);
       }
       return ad;
-    },import19.View_TextInput_0,import19.RenderType_TextInput)),
-    import0.ɵdid(671744,(null as any),0,import20.NgModel,[
+    },import27.View_TextInput_0,import27.RenderType_TextInput)),
+    import0.ɵdid(671744,(null as any),0,import28.NgModel,[
       [
         8,
         (null as any)
@@ -252,31 +329,31 @@ export function View_EmailGetterComponent_0(l:any):import0.ɵViewDefinition {
         'model'
       ]
     },{update: 'ngModelChange'}),
-    import0.ɵprd(2048,(null as any),import20.NgControl,(null as any),[import20.NgModel]),
-    import0.ɵdid(16384,(null as any),0,import20.NgControlStatus,[import20.NgControl],(null as any),(null as any)),
-    import0.ɵdid(5423104,(null as any),0,import21.TextInput,[
+    import0.ɵprd(2048,(null as any),import28.NgControl,(null as any),[import28.NgModel]),
+    import0.ɵdid(16384,(null as any),0,import28.NgControlStatus,[import28.NgControl],(null as any),(null as any)),
+    import0.ɵdid(5423104,(null as any),0,import29.TextInput,[
       import2.Config,
-      import6.Platform,
-      import15.Form,
-      import8.App,
+      import10.Platform,
+      import23.Form,
+      import12.App,
       import0.ElementRef,
       import0.Renderer,
       [
         2,
-        import5.Content
+        import9.Content
       ]
       ,
       [
         2,
-        import14.Item
+        import22.Item
       ]
       ,
       [
         2,
-        import20.NgControl
+        import28.NgControl
       ]
       ,
-      import7.DomController
+      import11.DomController
     ]
     ,{
       type: [
@@ -291,9 +368,8 @@ export function View_EmailGetterComponent_0(l:any):import0.ɵViewDefinition {
 
     }
     ,(null as any)),
-    (l()(),import0.ɵted(2,['\n                    '])),
-    (l()(),import0.ɵted((null as any),['\n                    '])),
-      (l()(),import0.ɵeld(0,(null as any),(null as any),1,'span',[[
+    (l()(),import0.ɵted(2,['\n          '])),
+      (l()(),import0.ɵeld(0,(null as any),2,1,'span',[[
         'style',
         'color:red'
       ]
@@ -303,26 +379,55 @@ export function View_EmailGetterComponent_0(l:any):import0.ɵViewDefinition {
       ''
     ]
     )),
-    (l()(),import0.ɵted((null as any),['\n\n                  '])),
-    (l()(),import0.ɵted(1,['\n              '])),
-      (l()(),import0.ɵeld(0,(null as any),1,2,'button',[[
+    (l()(),import0.ɵted(2,['\n        '])),
+    (l()(),import0.ɵted((null as any),['\n      '])),
+    (l()(),import0.ɵted((null as any),['\n      '])),
+    (l()(),import0.ɵeld(0,(null as any),(null as any),2,'button',[
+      [
+        'block',
+        ''
+      ]
+      ,
+      [
+        'color',
+        'primary'
+      ]
+      ,
+      [
+        'icon-left',
+        ''
+      ]
+      ,
+      [
         'ion-button',
         ''
       ]
-      ],(null as any),[[
+      ,
+      [
+        'item-end',
+        ''
+      ]
+      ,
+      [
+        'small',
+        ''
+      ]
+
+    ]
+      ,(null as any),[[
         (null as any),
         'click'
       ]
     ],(v,en,$event) => {
       var ad:boolean = true;
-      var co:import18.EmailGetterComponent = v.component;
+      var co:import26.EmailGetterComponent = v.component;
       if (('click' === en)) {
         const pd_0:any = ((<any>co.onSubmitClick(co.email)) !== false);
         ad = (pd_0 && ad);
       }
       return ad;
-    },import22.View_Button_0,import22.RenderType_Button)),
-    import0.ɵdid(1097728,(null as any),0,import23.Button,[
+    },import30.View_Button_0,import30.RenderType_Button)),
+    import0.ɵdid(1097728,(null as any),0,import31.Button,[
       [
         8,
         ''
@@ -332,50 +437,72 @@ export function View_EmailGetterComponent_0(l:any):import0.ɵViewDefinition {
       import0.ElementRef,
       import0.Renderer
     ]
-    ,(null as any),(null as any)),
-    (l()(),import0.ɵted(0,['Submit'])),
-    (l()(),import0.ɵted(1,['\n              '])),
+    ,{
+      color: [
+        0,
+        'color'
+      ]
+      ,
+      small: [
+        1,
+        'small'
+      ]
+      ,
+      block: [
+        2,
+        'block'
+      ]
+
+    }
+    ,(null as any)),
+    (l()(),import0.ɵted(0,['\n        Submit\n      '])),
+    (l()(),import0.ɵted((null as any),['  \n  '])),
+    (l()(),import0.ɵted(1,['     \n'])),
     (l()(),import0.ɵted((null as any),['\n  ']))
   ]
   ,(ck,v) => {
-    var co:import18.EmailGetterComponent = v.component;
+    var co:import26.EmailGetterComponent = v.component;
     const currVal_12:any = co.email;
-    ck(v,27,0,currVal_12);
+    ck(v,43,0,currVal_12);
     const currVal_13:any = 'text';
     const currVal_14:any = 'enter your email';
-    ck(v,30,0,currVal_13,currVal_14);
+    ck(v,46,0,currVal_13,currVal_14);
+    const currVal_16:any = 'primary';
+    const currVal_17:any = '';
+    const currVal_18:any = '';
+    ck(v,54,0,currVal_16,currVal_17,currVal_18);
   },(ck,v) => {
-    var co:import18.EmailGetterComponent = v.component;
-    const currVal_0:any = import0.ɵnov(v,6).statusbarPadding;
-    const currVal_1:any = import0.ɵnov(v,6)._hasRefresher;
-    ck(v,5,0,currVal_0,currVal_1);
+    var co:import26.EmailGetterComponent = v.component;
+    const currVal_0:any = import0.ɵnov(v,10).statusbarPadding;
+    const currVal_1:any = import0.ɵnov(v,10)._hasRefresher;
+    ck(v,9,0,currVal_0,currVal_1);
     const currVal_2:any = co.profile.profileVO._images[0].imageUrl;
-    ck(v,10,0,currVal_2);
+    ck(v,21,0,currVal_2);
     const currVal_3:any = co.profile.profileVO.firstName;
     const currVal_4:any = co.profile.profileVO.lastName;
-    ck(v,13,0,currVal_3,currVal_4);
-    const currVal_5:any = import0.ɵnov(v,29).ngClassUntouched;
-    const currVal_6:any = import0.ɵnov(v,29).ngClassTouched;
-    const currVal_7:any = import0.ɵnov(v,29).ngClassPristine;
-    const currVal_8:any = import0.ɵnov(v,29).ngClassDirty;
-    const currVal_9:any = import0.ɵnov(v,29).ngClassValid;
-    const currVal_10:any = import0.ɵnov(v,29).ngClassInvalid;
-    const currVal_11:any = import0.ɵnov(v,29).ngClassPending;
-    ck(v,26,0,currVal_5,currVal_6,currVal_7,currVal_8,currVal_9,currVal_10,currVal_11);
+    ck(v,24,0,currVal_3,currVal_4);
+    const currVal_5:any = import0.ɵnov(v,45).ngClassUntouched;
+    const currVal_6:any = import0.ɵnov(v,45).ngClassTouched;
+    const currVal_7:any = import0.ɵnov(v,45).ngClassPristine;
+    const currVal_8:any = import0.ɵnov(v,45).ngClassDirty;
+    const currVal_9:any = import0.ɵnov(v,45).ngClassValid;
+    const currVal_10:any = import0.ɵnov(v,45).ngClassInvalid;
+    const currVal_11:any = import0.ɵnov(v,45).ngClassPending;
+    ck(v,42,0,currVal_5,currVal_6,currVal_7,currVal_8,currVal_9,currVal_10,currVal_11);
     const currVal_15:any = co.validationMsg;
-    ck(v,34,0,currVal_15);
+    ck(v,49,0,currVal_15);
   });
 }
 function View_EmailGetterComponent_Host_0(l:any):import0.ɵViewDefinition {
   return import0.ɵvid(0,[
     (l()(),import0.ɵeld(0,(null as any),(null as any),1,'email-getter',([] as any[]),(null as any),(null as any),(null as any),View_EmailGetterComponent_0,RenderType_EmailGetterComponent)),
-    import0.ɵdid(49152,(null as any),0,import18.EmailGetterComponent,[
-      import24.NavParams,
-      import25.IonicModalHelperSrv
+    import0.ɵdid(49152,(null as any),0,import26.EmailGetterComponent,[
+      import32.NavParams,
+      import33.IonicModalHelperSrv
     ]
     ,(null as any),(null as any))
   ]
   ,(null as any),(null as any));
 }
-export const EmailGetterComponentNgFactory:import0.ComponentFactory<import18.EmailGetterComponent> = import0.ɵccf('email-getter',import18.EmailGetterComponent,View_EmailGetterComponent_Host_0,{},{},([] as any[]));
-//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiRTovV09SS0lOR19EaXIvbnBtUHJvamVjdHMvaW9uaWMtbG9naW4vY29tcG9uZW50cy9lbWFpbC1nZXR0ZXIvZW1haWwtZ2V0dGVyLm5nZmFjdG9yeS50cyIsInZlcnNpb24iOjMsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIm5nOi8vL0U6L1dPUktJTkdfRGlyL25wbVByb2plY3RzL2lvbmljLWxvZ2luL2NvbXBvbmVudHMvZW1haWwtZ2V0dGVyL2VtYWlsLWdldHRlci50cyIsIm5nOi8vL0U6L1dPUktJTkdfRGlyL25wbVByb2plY3RzL2lvbmljLWxvZ2luL2NvbXBvbmVudHMvZW1haWwtZ2V0dGVyL2VtYWlsLWdldHRlci50cy5FbWFpbEdldHRlckNvbXBvbmVudC5odG1sIiwibmc6Ly8vRTovV09SS0lOR19EaXIvbnBtUHJvamVjdHMvaW9uaWMtbG9naW4vY29tcG9uZW50cy9lbWFpbC1nZXR0ZXIvZW1haWwtZ2V0dGVyLnRzLkVtYWlsR2V0dGVyQ29tcG9uZW50X0hvc3QuaHRtbCJdLCJzb3VyY2VzQ29udGVudCI6WyIgIiwiXG4gICAgICAgICAgICAgICAgPGlvbi1oZWFkZXI+XG4gIFxuICAgICAgICAgICAgICAgIDwvaW9uLWhlYWRlcj5cbiAgICAgICAgICAgICAgICA8aW9uLWNvbnRlbnQgcGFkZGluZz5cbiAgXG4gICAgICAgICAgICAgICAgICA8ZGl2IHN0eWxlPVwidGV4dC1hbGlnbjogY2VudGVyO1wiPlxuICAgICAgICAgICAgICAgICAgICA8aW1nIFtzcmNdPVwicHJvZmlsZS5wcm9maWxlVk8uX2ltYWdlc1swXS5pbWFnZVVybFwiICBzdHlsZT1cIndpZHRoOiAxNTBweDtcIj5cbiAgICAgICAgICAgICAgICAgICAgPGgxPnt7cHJvZmlsZS5wcm9maWxlVk8uZmlyc3ROYW1lfX0ge3twcm9maWxlLnByb2ZpbGVWTy5sYXN0TmFtZX19PC9oMT5cbiAgICAgICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgICAgICAgPGlvbi1saXN0PlxuICAgICAgICAgICAgICAgICAgICA8aW9uLWl0ZW0+XG4gICAgICAgICAgICAgICAgICAgICAgPGlvbi1pbnB1dCB0eXBlPVwidGV4dFwiIHBsYWNlaG9sZGVyPVwiZW50ZXIgeW91ciBlbWFpbFwiIFsobmdNb2RlbCldPVwiZW1haWxcIj48L2lvbi1pbnB1dD5cbiAgICAgICAgICAgICAgICAgICAgPC9pb24taXRlbT5cbiAgICAgICAgICAgICAgICAgICAgPHNwYW4gc3R5bGU9XCJjb2xvcjpyZWRcIj57e3ZhbGlkYXRpb25Nc2d9fTwvc3Bhbj5cblxuICAgICAgICAgICAgICAgICAgPC9pb24tbGlzdD5cbiAgICAgICAgICAgICAgPGJ1dHRvbiBpb24tYnV0dG9uIChjbGljayk9XCJvblN1Ym1pdENsaWNrKGVtYWlsKVwiPlN1Ym1pdDwvYnV0dG9uPlxuICAgICAgICAgICAgICA8L2lvbi1jb250ZW50PlxuICAiLCI8ZW1haWwtZ2V0dGVyPjwvZW1haWwtZ2V0dGVyPiJdLCJtYXBwaW5ncyI6IkFBQUE7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7SUNBQTtJQUNnQjtnQkFBQTs7OztNQUFBO1FBQUE7O01BQUE7O0lBQUE7S0FBQTtJQUFZO0lBRUM7TUFDYjtRQUFBO1FBQUE7TUFBQTtJQUFBO01BQUE7UUFBQTtRQUFBO1FBQUE7TUFBQTs7TUFBQTtRQUFBO1FBQUE7UUFBQTtNQUFBOztJQUFBO0tBQUE7Z0JBQUE7Ozs7Ozs7OztNQUFBO1FBQUE7O01BQUE7O01BQUE7UUFBQTs7TUFBQTs7SUFBQTtLQUFBO0lBQXFCO01BRW5CO1FBQUE7UUFBQTtNQUFBO0lBQUE7SUFBaUM7TUFDL0I7UUFBQTtRQUFBO01BQUE7TUFBQTtRQUFBO1FBQUE7UUFBQTtNQUFBO0lBQUE7SUFBMEU7SUFDMUU7SUFBSTtNQUFBO01BQUE7TUFBQTtJQUFBO0lBQUE7SUFBbUU7SUFDbkU7SUFDTjtnQkFBQTs7Ozs7OztJQUFBO0tBQUE7SUFBVTtNQUNSO1FBQUE7UUFBQTtNQUFBO0lBQUE7Z0JBQUE7Ozs7O01BQUE7UUFBQTs7TUFBQTs7SUFBQTtLQUFBO2dCQUFBO2dCQUFBO2dCQUFBO2dCQUFBO0lBQVU7SUFDUjtNQUFBO1FBQUE7UUFBQTtNQUFBOztNQUFBO1FBQUE7UUFBQTtNQUFBOztJQUFBO0tBQUE7TUFBQTtRQUFBO1FBQUE7UUFBQTtNQUFBOztNQUFBO1FBQUE7UUFBQTtRQUFBO01BQUE7O01BQUE7UUFBQTtRQUFBO1FBQUE7TUFBQTs7TUFBQTtRQUFBO1FBQUE7UUFBQTtNQUFBOztNQUFBO1FBQUE7UUFBQTtRQUFBO01BQUE7O01BQUE7UUFBQTtRQUFBO1FBQUE7TUFBQTs7TUFBQTtRQUFBO1FBQUE7UUFBQTtNQUFBOztJQUFBO09BQUE7UUFBQTtRQUFBO01BQUE7SUFBQTtNQUFBO01BQUE7TUFBc0Q7UUFBQTtRQUFBO01BQUE7TUFBdEQ7SUFBQTtnQkFBQTtNQUFBO1FBQUE7UUFBQTtNQUFBOztNQUFBO1FBQUE7UUFBQTtNQUFBOztNQUFBO1FBQUE7UUFBQTtNQUFBOztNQUFBO1FBQUE7UUFBQTtNQUFBOztJQUFBO09BQUE7UUFBQTtRQUFBO01BQUE7SUFBQTtnQkFBQTtnQkFBQTtnQkFBQTs7Ozs7OztNQUFBO1FBQUE7O01BQUE7O01BQUE7UUFBQTs7TUFBQTs7TUFBQTtRQUFBOztNQUFBOzs7SUFBQTtLQUFBO01BQUE7UUFBQTtRQUFBO01BQUE7O01BQUE7UUFBQTtRQUFBO01BQUE7O0lBQUE7S0FBQTtJQUFzRjtJQUM3RTtNQUNYO1FBQUE7UUFBQTtNQUFBO0lBQUE7SUFBd0I7TUFBQTtNQUFBO0lBQUE7SUFBQTtJQUF3QjtJQUV2QztNQUNmO1FBQUE7UUFBQTtNQUFBO01BQUE7UUFBQTtRQUFBO01BQUE7SUFBQTtNQUFBO01BQUE7TUFBbUI7UUFBQTtRQUFBO01BQUE7TUFBbkI7SUFBQTtnQkFBQTtNQUFBO1FBQUE7UUFBQTtNQUFBOzs7OztJQUFBO0tBQUE7SUFBa0Q7SUFBZTtJQUNuRDs7OztJQU5nRDtJQUF0RCxVQUFzRCxVQUF0RDtJQUFXO0lBQVk7SUFBdkIsVUFBVyxXQUFZLFVBQXZCOzs7SUFSTjtJQUFBO0lBQUEsU0FBQSxtQkFBQTtJQUdTO0lBQUwsVUFBSyxTQUFMO0lBQ0k7SUFBQTtJQUFBO0lBSUY7SUFBQTtJQUFBO0lBQUE7SUFBQTtJQUFBO0lBQUE7SUFBQSxVQUFBLHVFQUFBO0lBRXNCO0lBQUE7Ozs7O0lDZDVDO2dCQUFBOzs7SUFBQTtLQUFBOzs7OyJ9
+export const EmailGetterComponentNgFactory:import0.ComponentFactory<import26.EmailGetterComponent> = import0.ɵccf('email-getter',import26.EmailGetterComponent,View_EmailGetterComponent_Host_0,{},{},([] as any[]));
+//# sourceMappingURL=data:application/json;base64,eyJmaWxlIjoiRTovV09SS0lOR19EaXIvbnBtUHJvamVjdHMvaW9uaWMtbG9naW4vY29tcG9uZW50cy9lbWFpbC1nZXR0ZXIvZW1haWwtZ2V0dGVyLm5nZmFjdG9yeS50cyIsInZlcnNpb24iOjMsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIm5nOi8vL0U6L1dPUktJTkdfRGlyL25wbVByb2plY3RzL2lvbmljLWxvZ2luL2NvbXBvbmVudHMvZW1haWwtZ2V0dGVyL2VtYWlsLWdldHRlci50cyIsIm5nOi8vL0U6L1dPUktJTkdfRGlyL25wbVByb2plY3RzL2lvbmljLWxvZ2luL2NvbXBvbmVudHMvZW1haWwtZ2V0dGVyL2VtYWlsLWdldHRlci50cy5FbWFpbEdldHRlckNvbXBvbmVudC5odG1sIiwibmc6Ly8vRTovV09SS0lOR19EaXIvbnBtUHJvamVjdHMvaW9uaWMtbG9naW4vY29tcG9uZW50cy9lbWFpbC1nZXR0ZXIvZW1haWwtZ2V0dGVyLnRzLkVtYWlsR2V0dGVyQ29tcG9uZW50X0hvc3QuaHRtbCJdLCJzb3VyY2VzQ29udGVudCI6WyIgIiwiXG4gIDxpb24taGVhZGVyPlxuICAgIDxpb24tdGl0bGU+RW50ZXIgRW1haWw8L2lvbi10aXRsZT5cbiAgPC9pb24taGVhZGVyPlxuPGlvbi1jb250ZW50IGNsYXNzPVwiYXBwLWJnLWNvbG9yXCI+XG4gIDxpb24tZ3JpZD5cbiAgICA8aW9uLXJvdyB0ZXh0LWNlbnRlcj5cbiAgICAgIDxpb24tY29sIHRleHQtY2VudGVyIGNvbC0xMiBjbGFzcz1cInByb2ZpbGVzZXR0aW5nLWltZ1wiPlxuICAgICAgICA8aW1nIFtzcmNdPVwicHJvZmlsZS5wcm9maWxlVk8uX2ltYWdlc1swXS5pbWFnZVVybFwiPlxuICAgICAgICA8aDE+e3twcm9maWxlLnByb2ZpbGVWTy5maXJzdE5hbWV9fSB7e3Byb2ZpbGUucHJvZmlsZVZPLmxhc3ROYW1lfX08L2gxPlxuICAgICAgPC9pb24tY29sPlxuICAgIDwvaW9uLXJvdz5cbiAgPC9pb24tZ3JpZD5cbiAgPGlvbi1jYXJkIHBhZGRpbmc+XG4gICAgICA8aW9uLWxpc3QgbWFyZ2luLWJvdHRvbT5cbiAgICAgICAgPGlvbi1pdGVtPlxuICAgICAgICAgIDxpb24taW5wdXQgdHlwZT1cInRleHRcIiBwbGFjZWhvbGRlcj1cImVudGVyIHlvdXIgZW1haWxcIiBbKG5nTW9kZWwpXT1cImVtYWlsXCI+PC9pb24taW5wdXQ+XG4gICAgICAgICAgPHNwYW4gc3R5bGU9XCJjb2xvcjpyZWRcIj57e3ZhbGlkYXRpb25Nc2d9fTwvc3Bhbj5cbiAgICAgICAgPC9pb24taXRlbT5cbiAgICAgIDwvaW9uLWxpc3Q+XG4gICAgICA8YnV0dG9uICBibG9jayBpb24tYnV0dG9uICBzbWFsbCBpdGVtLWVuZCBpY29uLWxlZnQgIGNvbG9yPVwicHJpbWFyeVwiIChjbGljayk9XCJvblN1Ym1pdENsaWNrKGVtYWlsKVwiPlxuICAgICAgICBTdWJtaXRcbiAgICAgIDwvYnV0dG9uPiAgXG4gIDwvaW9uLWNhcmQ+ICAgICBcbjwvaW9uLWNvbnRlbnQ+XG4gICIsIjxlbWFpbC1nZXR0ZXI+PC9lbWFpbC1nZXR0ZXI+Il0sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0lDQUE7SUFDRTtnQkFBQTs7OztNQUFBO1FBQUE7O01BQUE7O0lBQUE7S0FBQTtJQUFZO0lBQ1Y7Z0JBQUE7Ozs7TUFBQTtRQUFBOztNQUFBOztNQUFBO1FBQUE7O01BQUE7O0lBQUE7S0FBQTtJQUFXO0lBQXVCO0lBQ3ZCO01BQ2Y7UUFBQTtRQUFBO01BQUE7SUFBQTtNQUFBO1FBQUE7UUFBQTtRQUFBO01BQUE7O01BQUE7UUFBQTtRQUFBO1FBQUE7TUFBQTs7SUFBQTtLQUFBO2dCQUFBOzs7Ozs7Ozs7TUFBQTtRQUFBOztNQUFBOztNQUFBO1FBQUE7O01BQUE7O0lBQUE7S0FBQTtJQUFrQztNQUNoQztRQUFBO1FBQUE7TUFBQTtJQUFBO2dCQUFBO0lBQVU7SUFDUjtNQUFBO1FBQUE7UUFBQTtNQUFBOztN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
