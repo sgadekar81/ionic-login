@@ -4,24 +4,35 @@ import { IonicModalHelperSrv } from 'ionic-modal-helper/ionic-modal-helper.servi
 @Component({
   selector: 'email-getter',
   template: `
-                <ion-header>
-  
-                </ion-header>
-                <ion-content padding>
-  
-                  <div style="text-align: center;">
-                    <img [src]="profile.profileVO._images[0].imageUrl"  style="width: 150px;">
-                    <h1>{{profile.profileVO.firstName}} {{profile.profileVO.lastName}}</h1>
-                  </div>
-                  <ion-list>
-                    <ion-item>
-                      <ion-input type="text" placeholder="enter your email" [(ngModel)]="email"></ion-input>
-                    </ion-item>
-                    <span style="color:red">{{validationMsg}}</span>
 
-                  </ion-list>
-              <button ion-button (click)="onSubmitClick(email)">Submit</button>
-              </ion-content>
+
+  <ion-header>
+    <ion-title>Enter Email</ion-title>
+  </ion-header>
+
+<ion-content class="app-bg-color">
+  <ion-grid>
+    <ion-row text-center>
+      <ion-col text-center col-12 class="profilesetting-img">
+        <img [src]="profile.profileVO._images[0].imageUrl">
+        <h1>{{profile.profileVO.firstName}} {{profile.profileVO.lastName}}</h1>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-card padding>
+    
+      <ion-list margin-bottom>
+        <ion-item>
+          <ion-input type="text" placeholder="enter your email" [(ngModel)]="email"></ion-input>
+          <span style="color:red">{{validationMsg}}</span>
+        </ion-item>
+      </ion-list>
+      <button  block ion-button  small item-end icon-left  color="primary" (click)="onSubmitClick(email)">
+        Submit
+      </button>  
+    
+  </ion-card>     
+</ion-content>
   `
 })
 export class EmailGetterComponent {
