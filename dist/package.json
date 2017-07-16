@@ -1,6 +1,6 @@
 {
   "name": "ionic-login",
-  "version": "0.0.19-alpha",
+  "version": "0.0.20-alpha",
   "description": "ionic login module for Angular.",
   "main": "bundles/amazing.umd.js",
   "module": "index.js",
